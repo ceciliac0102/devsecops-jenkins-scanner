@@ -258,6 +258,7 @@ class CodeBuildStack(Stack):
         s3_bucket.grant_read_write(codebuild_jar)
         s3_bucket.grant_read_write(codebuild_joern)
         s3_bucket.grant_read_write(codebuild_behave_image_build)
+        s3_bucket.grant_read_write(codebuild_behave_scanning)
 
         CfnOutput(self, "WebGoatBuildProjectName", value=codebuild_jar.project_name)
         CfnOutput(self, "JoernScanProjectName", value=codebuild_joern.project_name)
